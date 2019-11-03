@@ -11,6 +11,7 @@ public class Obstacle : MonoBehaviour
     {
         obstacleEraser = this.gameObject.GetComponent<ObstacleEraser>();
         obstacleMover = this.gameObject.GetComponent<ObstacleMover>();
+        obstacleEraser.Init();
         obstacleMover.Init();
     }
 
@@ -18,6 +19,5 @@ public class Obstacle : MonoBehaviour
     {
         obstacleEraser.ManagedUpdate();
         obstacleMover.ManagedUpdate();
-
     }
 }

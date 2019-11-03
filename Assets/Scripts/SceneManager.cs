@@ -7,15 +7,24 @@ public class SceneManager : MonoBehaviour
     public PlayerManager plManager;
     public ObjectManager objectManager;
 
+    public bool Player_OFF = false;
+    public bool Object_OFF = false;
+
     void Start()
     {
-        plManager.Init();
-        objectManager.Init();
+        if (!Player_OFF)
+            plManager.Init();
+
+        if (!Object_OFF)
+            objectManager.Init();
     }
 
     void Update()
     {
-        plManager.ManagedUpdate();
-        objectManager.ManagedUpdate();   
+        if (!Player_OFF)
+            plManager.ManagedUpdate();
+
+        if (!Object_OFF)
+            objectManager.ManagedUpdate();
     }
 }
